@@ -25,9 +25,9 @@ input.onButtonPressed(Button.B, function () {
     scrollbit.show()
 })
 basic.showLeds(`
-    . # . . .
-    . # . . .
-    . . . . .
-    . # . . .
-    . # . . .
+    . . # . .
+    . # . # .
+    # . # . #
+    . # . # .
+    . . # . .
     `)
