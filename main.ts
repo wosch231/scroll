@@ -2,11 +2,11 @@ input.onButtonPressed(Button.A, function () {
     scrollbit.clear()
     scrollbit.setImage(
     images.createBigImage(`
-        # # . . . . . . # #
-        . # # . . . . # # .
-        . . # # . . # # . .
-        . . . # # # # . . .
-        . . . . # # . . . .
+        # # . . . . . # # .
+        . # # . . . # # . .
+        . . # # . # # . . .
+        . . . # # # . . . .
+        . . . . # . . . . .
         `),
     4,
     1,
