@@ -8,20 +8,22 @@ input.onButtonPressed(Button.A, function () {
         . . . # # # # . . .
         . . . . # # . . . .
         `),
-    0,
-    0,
+    4,
+    1,
     64
     )
     scrollbit.show()
 })
 input.onButtonPressed(Button.AB, function () {
     scrollbit.clear()
-    scrollbit.setPixel(8, 3, 128)
+    scrollbit_z.scrollbit_Line1(0, 4, 7, 2, 64)
+    scrollbit_z.scrollbit_Line1(8, 2, 16, 4, 64)
+    scrollbit.setPixel(8, 1, 160)
     scrollbit.show()
 })
 input.onButtonPressed(Button.B, function () {
     scrollbit.clear()
-    scrollbit.scrollText("hallo", 64, 50)
+    scrollbit.scrollText("I{Heart}", 64, 50)
     scrollbit.show()
 })
 basic.showLeds(`
@@ -31,3 +33,6 @@ basic.showLeds(`
     . # . # .
     . . # . .
     `)
+scrollbit.clear()
+scrollbit.setAll(50)
+scrollbit.show()
