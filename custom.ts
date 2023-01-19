@@ -7,6 +7,7 @@
 /**
  * Custom blocks
  */
+
 //% weight=100 color=#0fbc11 icon="\uf14b" block="Scroll:Bit_z"
 namespace scrollbit_z {
     /**
@@ -65,6 +66,47 @@ namespace scrollbit_z {
                 err += dx
                 y += sy
             }
+        }
+    }
+
+    //% blockId=Kreis
+    //% block="Zeichne Kreis mit (xm,ym)%xm%ym und Radius%R in Helligkeit%brightness"
+    //% inlineInputMode=inline
+    //% xm.min=0 xm.max=16
+    //% ym.min=0 ym.max=6
+    //% r.min=0 r.max=16
+    //% brightness.min=0 brightness.max=255 brightness.defl=64
+    //% weight=60 blockGap=8
+    export function Kreis(xm: number, ym: number, r: number, brightness:number) {
+        let f = 1 - r;
+        let ddF_x = 0;
+        let ddF_y = -2 * r;
+        let x = 0;
+        let y = r;
+
+        scrollbit.setPixel(xm, ym + r, brightness);
+        scrollbit.setPixel(xm, ym - r, brightness);
+        scrollbit.setPixel(xm + r, ym, brightness);
+        scrollbit.setPixel(xm - r, ym, brightness);
+
+        while (x < y) {
+            if (f >= 0) {
+                y -= 1;
+                ddF_y += 2;
+                f += ddF_y;
+            }
+            x += 1;
+            ddF_x += 2;
+            f += ddF_x + 1;
+
+            scrollbit.setPixel(xm + x, ym + y, brightness);
+            scrollbit.setPixel(xm - x, ym + y, brightness);
+            scrollbit.setPixel(xm + x, ym - y, brightness);
+            scrollbit.setPixel(xm - x, ym - y, brightness);
+            scrollbit.setPixel(xm + y, ym + x, brightness);
+            scrollbit.setPixel(xm - y, ym + x, brightness);
+            scrollbit.setPixel(xm + y, ym - x, brightness);
+            scrollbit.setPixel(xm - y, ym - x, brightness);
         }
     }
 }

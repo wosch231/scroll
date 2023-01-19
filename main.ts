@@ -1,17 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     scrollbit.clear()
-    scrollbit.setImage(
-    images.createBigImage(`
-        # # . . . . . # # .
-        . # # . . . # # . .
-        . . # # . # # . . .
-        . . . # # # . . . .
-        . . . . # . . . . .
-        `),
-    4,
-    1,
-    64
-    )
+    scrollbit_z.Kreis(0, 0, 8, 64)
     scrollbit.show()
 })
 input.onButtonPressed(Button.AB, function () {
